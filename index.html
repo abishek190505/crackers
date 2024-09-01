@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cracker Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        /* Set a uniform style for all images in the table */
+        .cracker-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover; /* Ensures images are scaled properly */
+        }
+        .button {
+    margin-top: 40px;
+}
+
+.button button {
+    padding: 15px 30px; /* Adjusts the size of the button */
+    font-size: 16px; /* Sets the text size */
+    background-color: #ff4500; /* Changes the background color */
+    color: #fff; /* Changes the text color to white */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Adds rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button button:hover {
+    background-color: #e63900; /* Darkens the color on hover */
+}
+        .message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none; /* Hide the message initially */
+        }
+        /* Adjust column widths */
+        .col-sno { width: 5%; }
+        .col-image { width: 0.5%; }
+        .col-name { width: 30%; }
+        .col-quantity { width: 15%; }
+        .col-price { width: 5%; }
+        .col-total { width: 5%; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header section styling */
+        .header {
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+        .header h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+        /* Contact details section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #ddd;
+        }
+        .contact-info div {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+        .contact-info div span {
+            font-weight: bold;
+        }
+        /* Highlight email and phone numbers */
+        .highlight {
+            color: #ff4500;
+            font-weight: bold;
+        }
+        /* Location section styling */
+       .location {
+            padding: 20px;
+            color: #FFA07A; /* Light Salmon (light orange) */
+            text-shadow: 1px 1px 2px black; /* Maintain shadow for readability */
+            text-align: center;
+        }
+
+        .location p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        /* Styling for call-to-action buttons */
+        .cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: #e63900;
+        }
+    </style>
+    
+</head>
+<body>
+     <div class="header">
+        <h1>Abishek Crackers</h1>
+        <h2>Your One-Stop Shop for Quality Crackers</h2>
+    </div>
+
+    <!-- Contact details section -->
+    <div class="contact-info">
+        <div>
+            <span>Contact Numbers:</span> 
+            <span class="highlight">9345568658, 9751904243</span>
+            
+        </div>
+        <div>
+            <span>Email:</span> 
+            <a href="mailto:abishek190505@gmail.com" class="highlight">abishek190505@gmail.com</a>
+            <span> Gpay:</span>
+            <span class="highlight">9345568658</span>
+          
+        </div>
+    </div>
+
+    <div class="location">
+        <p>Abishek,Velmurugan,</p>
+        <p>Kandha Pillayar Kovil Street, Veppillaipatti Post, Valapady Tk,</p>
+        <p>Salem Dt, Tamil Nadu</p>
+
+    </div>
+   <div class="total">
+        Total Amount: ₹ <span id="totalAmount">0</span>
+    </div>
+    <h1>Order Crackers</h1>
+
+    <table id="orderTable">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Image</th>
+                <th>Cracker Name</th>
+                <th>Quantity</th>
+                <th>Price (â‚¹)</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <thead>
+            <tr>
+                <td>1</td>
+                <td><img src="1.jpg" alt="3'' KURUVI"></td>
+                <td>3'' KURUVI குருவி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>10</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="1.jpg" alt="3'' KURUVI"></td>
+                <td>2 2/4'' KURUVI(other) குருவி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>6</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="1.jpg" alt="4'' LAKSHMI"></td>
+                <td>3 1/2'' LAKSHMI(other) லக்ஷ்மி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>10</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="image.png" alt="4'' LAKSHMI"></td>
+                <td>4'' LAKSHMI லக்ஷ்மி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>40</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><img src="image.png" alt="4'' LAKSHMI"></td>
+                <td>4'' LAKSHMI(other) லக்ஷ்மி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>16</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><img src="image.png" alt="6'' LAKSHMI"></td>
+                <td>6'' LAKSHMI லக்ஷ்மி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><img src="image.png" alt="4'' YANNAI"></td>
+                <td>4'' YANNAI யானை</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>40</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><img src="image.png" alt="6'' YANNAI"></td>
+                <td>6'' YANNAI யானை</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><img src="image.png" alt="5'' GOLD"></td>
+                <td>6'' GOLD லக்ஷ்மி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><img src="image.png" alt="8'' jalli kattu"></td>
+                <td>8'' jalli kattu(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>35</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td><img src="image.png" alt="2 SOUND"></td>
+                <td>2 SOUND சத்தம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><img src="image.png" alt="3 SOUND"></td>
+                <td>3 SOUND சத்தம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+           
+            <tr>
+                <td>13</td>
+                <td><img src="image.png" alt="TAJ CHROSA"></td>
+                <td>TAJ CHROSA ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>15</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td><img src="image.png" alt="28GAINT"></td>
+                <td>28GAINT ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>20</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td><img src="image.png" alt="56GAINT"></td>
+                <td>56GAINT ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td><img src="image.png" alt="56GAINT"></td>
+                <td>56GAINT(other) ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>35</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td><img src="image.png" alt="24DELUXE"></td>
+                <td>24DELUXE ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>70</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td><img src="image.png" alt="24DELUXE"></td>
+                <td>24DELUXE(other) ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td><img src="image.png" alt="32DELUXE"></td>
+                <td>32DELUXE ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>100</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td><img src="image.png" alt="50DELUXE"></td>
+                <td>50DELUXE ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>150</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td><img src="image.png" alt="50DELUXE"></td>
+                <td>50DELUXE(other) ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>110</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td><img src="image.png" alt="100DELUXE"></td>
+                <td>100DELUXE ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td><img src="image.png" alt="100DELUXE"></td>
+                <td>100DELUXE(other) ஊசி சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>210</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td><img src="image.png" alt="50PCS BIJILI"></td>
+                <td>50PCS BIJILI பிஜிலி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>30</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td><img src="image.png" alt="50PCS BIJILI"></td>
+                <td>100PCS RED BIJILI(other) பிஜிலி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>20</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td><img src="image.png" alt="50PCS BIJILI"></td>
+                <td>100PCS VARI BIJILI(other) பிஜிலி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>20</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td><img src="image.png" alt="100PCS BIJILI"></td>
+                <td>100PCS BIJILI பிஜிலி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td><img src="image.png" alt="100 WAALA"></td>
+                <td>100 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>80</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td><img src="image.png" alt="100 WAALA"></td>
+                <td>100 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>35</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td><img src="image.png" alt="200 WAALA"></td>
+                <td>200 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>120</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td><img src="image.png" alt="200 WAALA"></td>
+                <td>200 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>65</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td><img src="image.png" alt="300 WAALA"></td>
+                <td>300 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>95</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td><img src="image.png" alt="1000 WAALA"></td>
+                <td>1000 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>350</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td><img src="image.png" alt="2000 WAALA"></td>
+                <td>2000 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>700</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td><img src="image.png" alt="1000 WAALA"></td>
+                <td>1000 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>190</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td><img src="image.png" alt="2000 WAALA"></td>
+                <td>2000 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>380</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td><img src="image.png" alt="5000 WAALA"></td>
+                <td>5000 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>1500</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td><img src="image.png" alt="10000 WAALA"></td>
+                <td>10000 WAALA சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>2650</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td><img src="image.png" alt="5000 WAALA"></td>
+                <td>5000 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>850</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td><img src="image.png" alt="10000 WAALA"></td>
+                <td>10000 WAALA(other) சரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>1600</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td><img src="image.png" alt="HYDRO BOMB"></td>
+                <td>HYDRO BOMB அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td><img src="image.png" alt="BULLET BOMB"></td>
+                <td>BULLET BOMB அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td><img src="image.png" alt="KINGKONG OR JURASSICBOMB"></td>
+                <td>KINGKONG OR JURASSICBOMB அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>150</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td><img src="image.png" alt="DIGITAL OR JALLIKATTUBOMB"></td>
+                <td>DIGITAL OR JALLIKATTUBOMB அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td><img src="image.png" alt="HYDRO BOMB"></td>
+                <td>HYDRO BOMB(other) அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td><img src="image.png" alt="CLASSIC BOMB"></td>
+                <td>classic BOMB(other) அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>75</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td><img src="image.png" alt="KINGKONG"></td>
+                <td>KINGKONG(other) அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>65</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td><img src="image.png" alt="DIGITAL OR JALLIKATTUBOMB"></td>
+                <td>555(other) அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>110</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td><img src="image.png" alt="DIGITAL"></td>
+                <td>DIGITAL(other) அனிகுண்டு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>160</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td><img src="image.png" alt="SARAVEDI"></td>
+                <td>SARAVEDI நாட்டு வெடி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td><img src="image.png" alt="KUCHI VANAM"></td>
+                <td>KUCHI VANAM குச்சி வனம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>8</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td><img src="image.png" alt="THORANAM"></td>
+                <td>THORANAM தோரணம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td><img src="image.png" alt="NATTU OR SARAVEDI"></td>
+                <td>NATTU OR SARAVEDI நாட்டு வெடி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td><img src="image.png" alt="KUNDU VANAM"></td>
+                <td>KUNDU VANAM குண்டு வனம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+    
+            </tr>
+            <tr>
+                <td>53</td>
+                <td><img src="image.png" alt="50G PAPER BOMB"></td>
+                <td>50G PAPER BOMB பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td><img src="image.png" alt="100G PAPER BOMB"></td>
+                <td>100G PAPER BOMB பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td><img src="image.png" alt="1/4 KG PAPER BOMB"></td>
+                <td>1/4 KG PAPER BOMB பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td><img src="image.png" alt="1/4 KG PAPER BOMB"></td>
+                <td>1/4 KG PAPER BOMB(other) பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>45</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td><img src="image.png" alt="1/2 KG PAPER BOMB"></td>
+                <td>1/2 KG PAPER BOMB பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>100</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td><img src="image.png" alt="1/2 KG PAPER BOMB"></td>
+                <td>1/2 KG PAPER BOMB(other) பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>90</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td><img src="image.png" alt="1KG PAPER BOMB"></td>
+                <td>1KG PAPER BOMB பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td><img src="image.png" alt="1KG PAPER BOMB"></td>
+                <td>1KG PAPER BOMB(other) பேப்பர் பாம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>160</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td><img src="image.png" alt="MAGIC SHOW"></td>
+                <td>MAGIC SHOW பண வெடி</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>62</td>
+                <td><img src="image.png" alt="7CM SPARKLERS"></td>
+                <td>7CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>15</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td><img src="image.png" alt="10CM SPARKLERS"></td>
+                <td>10CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>30</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td><img src="image.png" alt="10CM SPARKLERS"></td>
+                <td>10CM(other) மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>14</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td><img src="image.png" alt="12CM SPARKLERS"></td>
+                <td>12CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td><img src="image.png" alt="12CM SPARKLERS"></td>
+                <td>12CM(other) மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>21</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td><img src="image.png" alt="15CM SPARKLERS"></td>
+                <td>15CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td><img src="image.png" alt="15CM SPARKLERS"></td>
+                <td>15CM(other) மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>31</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td><img src="image.png" alt="30CM SPARKLERS"></td>
+                <td>30CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>80</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td><img src="image.png" alt="30CM SPARKLERS"></td>
+                <td>30CM(other) மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>34</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td><img src="image.png" alt="50CM SPARKLERS"></td>
+                <td>50CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>140</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td><img src="image.png" alt="50CM SPARKLERS"></td>
+                <td>50CM(other) மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>125</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td><img src="image.png" alt="80CM SPARKLERS"></td>
+                <td>80CM மத்தாப்பு</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td><img src="image.png" alt="CHAKKAR BIG"></td>
+                <td>CHAKKAR BIG சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td><img src="image.png" alt="CHAKKAR SPL"></td>
+                <td>CHAKKAR SPL சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>120</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td><img src="image.png" alt="CHAKKAR DLX"></td>
+                <td>CHAKKAR DLX சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td><img src="image.png" alt="CHAKKAR BIG"></td>
+                <td>CHAKKAR BIG(other) சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>25</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td><img src="image.png" alt="CHAKKAR SPL"></td>
+                <td>CHAKKAR SPL(other) சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>45</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td><img src="image.png" alt="CHAKKAR DLX"></td>
+                <td>CHAKKAR DLX(other) சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>85</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td><img src="image.png" alt="CHAKKAR DICO WHEEL"></td>
+                <td>CHAKKAR Dico wheel(other) சக்கரம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>85</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>81</td>
+                <td><img src="image.png" alt="F/P SPL"></td>
+                <td>F/P SPL புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>130</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td><img src="image.png" alt="F/P ASHOKA"></td>
+                <td>F/P ASHOKA புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>120</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td><img src="image.png" alt="F/P COLOR KOTI"></td>
+                <td>F/P COLOR KOTI புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td><img src="image.png" alt="F/P COLOR KOTI DLX"></td>
+                <td>F/P COLOR KOTI DLX புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>300</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td><img src="image.png" alt="F/P SPL"></td>
+                <td>F/P SPL(other) புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>55</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td><img src="image.png" alt="F/P ASHOKA"></td>
+                <td>F/P ASHOKA(other) புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>85</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td><img src="image.png" alt="F/P COLOR KOTI"></td>
+                <td>F/P COLOR KOTI(other) புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>175</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td><img src="image.png" alt="F/P DLX"></td>
+                <td>F/P DLX(other) புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>95</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td><img src="image.png" alt="F/P BIG"></td>
+                <td>F/P BIG(other) புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>45</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td><img src="image.png" alt="F/P TRI COLOR"></td>
+                <td>F/P TRI COLOR புஸ்வானம்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+           
+            <tr>
+                <td>91</td>
+                <td><img src="image.png" alt="BABY ROCKET"></td>
+                <td>BABY ROCKET ராக்கெட்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>60</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td><img src="image.png" alt="BIG ROCKET"></td>
+                <td>BIG ROCKET ராக்கெட்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>140</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td><img src="image.png" alt="3,2 SOUNDROCKET"></td>
+                <td>3,2 SOUNDROCKET ராக்கெட்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td><img src="image.png" alt="LUNIK ROCKET"></td>
+                <td>LUNIK ROCKET(other) ராக்கெட்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>95</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td><img src="image.png" alt="WHISTLING SOUNDROCKET"></td>
+                <td>WHISTLING SOUNDROCKET(other) ராக்கெட்</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>150</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td><img src="image.png" alt="2'' 1/2 OUT PIPE"></td>
+                <td>2'' 1/2 OUT PIPE OUT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td><img src="image.png" alt="3'' 1/2 PIPE"></td>
+                <td>3'' 1/2 PIPE OUT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>300</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td><img src="image.png" alt="4'' PANDIYAN"></td>
+                <td>4'' PANDIYAN OUT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>750</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td><img src="image.png" alt="4'' RAJKANNA"></td>
+                <td>4'' RAJKANNA OUT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>700</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td><img src="image.png" alt="2'' 3 IN 1 OUT"></td>
+                <td>2'' 3 IN 1 OUT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>350</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td><img src="image.png" alt="5'' VANITHA"></td>
+                <td>5'' VANITHA</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>1400</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td><img src="image.png" alt="NIGARA FALLS OR GOLDEN EYE"></td>
+                <td>NIGARA FALLS OR GOLDEN EYE</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>350</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td><img src="image.png" alt="ECO SOUND ONLY SKY SOUND"></td>
+                <td>ECO SOUND ONLY SKY SOUND</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>200</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td><img src="image.png" alt="CHOTTA FANCY"></td>
+                <td>CHOTTA FANCY</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>50</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td><img src="image.png" alt="2''Ariel PIPE"></td>
+                <td>2''Ariel PIPE(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>65</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td><img src="image.png" alt="4''Ariel PIPE"></td>
+                <td>4''Ariel PIPE(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>320</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td><img src="image.png" alt="5''Ariel PIPE"></td>
+                <td>5''Ariel PIPE(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>380</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>106</td>
+                <td><img src="image.png" alt="7 SHOT"></td>
+                <td>7 SHOT</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>150</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td><img src="image.png" alt="12 SHOT RIDER"></td>
+                <td>12 SHOT RIDER</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>150</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td><img src="image.png" alt="12 SHOT COLOUR RIDER"></td>
+                <td>12 SHOT COLOUR RIDER(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>160</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td><img src="image.png" alt="30 SHOT MULTI COLOR"></td>
+                <td>30 SHOT MULTI COLOR</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>500</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td><img src="image.png" alt="30 SHOT MULTI COLOR"></td>
+                <td>30 SHOT MULTI COLOR(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>300</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td><img src="image.png" alt="60 SHOT MULTI COLOR"></td>
+                <td>60 SHOT MULTI COLOR</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>900</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>112</td>
+                <td><img src="image.png" alt="60 SHOT MULTI COLOR"></td>
+                <td>60 SHOT MULTI COLOR(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>550</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>113</td>
+                <td><img src="image.png" alt="120 SHOT MULTI COLOR"></td>
+                <td>120 SHOT MULTI COLOR</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>1700</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>114</td>
+                <td><img src="image.png" alt="120 SHOT MULTI COLOR"></td>
+                <td>120 SHOT MULTI COLOR(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>1100</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>115</td>
+                <td><img src="image.png" alt="240 SHOT MULTI COLOR"></td>
+                <td>240 SHOT MULTI COLOR</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>3300</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>116</td>
+                <td><img src="image.png" alt="240 SHOT MULTI COLOR"></td>
+                <td>240 SHOT MULTI COLOR(other)</td>
+                <td><input type="number" value="0" min="0" oninput="calculateTotal()"></td>
+                <td>2600</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="message" id="orderMessage">
+        Minimum order amount is ₹1999. Please add more items to your cart.
+    </div>
+    <div class="message" id="orderMessage">
+         Use bellow botten.
+    </div>
+    <div class="button">
+        <button id="shareButton" onclick="shareOnWhatsApp()" disabled>Share on WhatsApp to place the order</button> <a href="https://wa.me/9345568658"<img src="https://neocities.org/site_thumbnails/17/82/beginners/advertise/whatsapp.png.210x158.webp"></a>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            var table = document.getElementById("orderTable");
+            var grandTotal = 0;
+
+            for (var i = 1, row; row = table.rows[i]; i++) {
+                var price = parseInt(row.cells[4].innerText);
+                var quantity = parseInt(row.cells[3].getElementsByTagName("input")[0].value);
+
+                // Ensure quantity is a valid number and handle edge cases
+                if (isNaN(quantity) || quantity < 0) {
+                    quantity = 0;
+                }
+
+                var totalPrice = price * quantity; // Calculate total price for this row
+
+                // Update the total price cell in the current row
+                row.cells[5].innerText = totalPrice;
+
+                // Add to grand total only if quantity is greater than 0
+                if (quantity > 0) {
+                    grandTotal += totalPrice;
+                }
+            }
+
+            // Update the grand total amount displayed
+            document.getElementById("totalAmount").innerText = grandTotal;
+
+            // Enable or disable the "Share on WhatsApp" button and show/hide the message based on the minimum order amount
+            var minimumOrderAmount = 1999;
+            var shareButton = document.getElementById("shareButton");
+            var orderMessage = document.getElementById("orderMessage");
+
+            if (grandTotal >= minimumOrderAmount) {
+                shareButton.disabled = false;
+                orderMessage.style.display = 'none'; // Hide the message
+            } else {
+                shareButton.disabled = true;
+                orderMessage.style.display = 'block'; // Show the message
+            }
+        }
+
+        function generateOrderSlip() {
+            var table = document.getElementById("orderTable");
+            var orderDetails = "Order Details:\n";
+            var grandTotal = 0;
+
+            for (var i = 1, row; row = table.rows[i]; i++) {
+                var crackerName = row.cells[2].innerText;
+                var price = parseInt(row.cells[4].innerText);
+                var quantity = parseInt(row.cells[3].getElementsByTagName("input")[0].value);
+
+                // Ensure quantity is a valid number and handle edge cases
+                if (isNaN(quantity) || quantity < 0) {
+                    quantity = 0;
+                }
+
+                var totalPrice = price * quantity; // Calculate total price for this row
+
+                // Add to order details only if quantity is greater than 0
+                if (quantity > 0) {
+                    orderDetails += crackerName + " - Quantity: " + quantity + ", Total Price: ₹" + totalPrice + "\n";
+                    grandTotal += totalPrice;
+                }
+            }
+
+            orderDetails += "Total Amount: ₹" + grandTotal;
+            return orderDetails;
+        }
+
+        function shareOnWhatsApp() {
+            var orderSlip = generateOrderSlip();
+            var encodedOrderSlip = encodeURIComponent(orderSlip);
+            var whatsappUrl = "https://wa.me/9345568658?text=" + encodedOrderSlip;
+
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
